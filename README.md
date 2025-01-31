@@ -1,7 +1,4 @@
 # Verysure
-# Head 1
-*Test*
-Uppgift: Beskriv alla komponenter som behövs i verysure readme.
 
 #KOMPONENTER: För ett blink program
 
@@ -23,7 +20,6 @@ Uppgift: Beskriv alla komponenter som behövs i verysure readme.
 
 - Thonny IDE
 
-# DoD: Fullständig beskrivning av all hårdvara och mjukvara som behövs för blink:
 
 ## Hårdvara:
 - Raspberry Pi Pico W: Huvudmikrokontrollern för vårt projekt.
@@ -47,15 +43,20 @@ Uppgift: Beskriv alla komponenter som behövs i verysure readme.
 
 ## Installera MicroPython:
 
-- Ladda ner den senaste firmware-filen för Raspberry Pi Pico W från MicroPython-webbplatsen
-
 - Håll ned BOOTSEL-knappen på Pico W och anslut den till dator med en USB-kabel. Släpp BOOTSEL-knappen när enheten visas som en USB-enhet på dator.
+
+-ers/ludvignorin/ws/temporary/reactiongame.py'Ladda ner den senaste firmware-filen för Raspberry Pi Pico W från MicroPython-webbplatsen
 
 - Dra och släpp den nedladdade firmware-filen till den anslutna enheten. Pico W kommer att starta om och vara redo att använda MicroPython.
 
 ## Installera Thonny IDE:
 
 - Ladda ner och installera Thonny på dator från Thonny-webbplatsen.
+  ```bash
+    sudo apt install thonny
+  ```
+  **Via länk**
+  <https://thonny.org/> 
 
 - Öppna Thonny och gå till "Tools" > "Options" > "Interpreter".
 
@@ -63,12 +64,13 @@ Uppgift: Beskriv alla komponenter som behövs i verysure readme.
 
 ## Anslut Pico W:
 
-- Anslut din Raspberry Pi Pico W till datorn med en USB-kabel. Se till att Thonny IDE känner igen enheten.
+- Anslut din Raspberry Pi Pico W till datorn med en USB-kabelm(om du inte reda gjort). Se till att Thonny IDE känner igen enheten.
 
 ## Skriv och kör kod:
 
 - Använd Thonny IDE för att skriva MicroPython-kod. Här är ett exempel på kod för att blinka en LED:
 
+```python
 from machine import Pin
 from utime import sleep
 
@@ -83,5 +85,5 @@ while True:
         break
 pin.off()
 print("Finished.")
-
+```
 - Spara och kör koden i Thonny. LED:en på Pico W kommer att blinka på och av varje sekund.
