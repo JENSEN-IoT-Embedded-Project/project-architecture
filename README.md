@@ -45,7 +45,7 @@
 
 - Håll ned BOOTSEL-knappen på Pico W och anslut den till dator med en USB-kabel. Släpp BOOTSEL-knappen när enheten visas som en USB-enhet på dator.
 
--ers/ludvignorin/ws/temporary/reactiongame.py'Ladda ner den senaste firmware-filen för Raspberry Pi Pico W från MicroPython-webbplatsen
+- Gå in på USB enheten. Klicka på INDEX.HTM Ladda ner den senaste firmware-filen(UF2 för Raspberry Pi Pico W)
 
 - Dra och släpp den nedladdade firmware-filen till den anslutna enheten. Pico W kommer att starta om och vara redo att använda MicroPython.
 
