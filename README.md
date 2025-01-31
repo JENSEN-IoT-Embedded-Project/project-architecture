@@ -1,7 +1,6 @@
 # Verysure
 
-#KOMPONENTER: För ett blink program
-
+# TTFHW
 ## Hårdvara
 
 - Raspberry Pi Pico W
