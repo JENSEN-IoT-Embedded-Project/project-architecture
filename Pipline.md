@@ -2,6 +2,8 @@
 - Syfte: Ge en övergripande bild av hela loT-systemet.
 - Innehäll:
 - Enheter (sensorer, aktuatorer, gateways).
+  Pico w
+  Ultrasonic sensor.
 - Kommunikationskanaler (Wi-Fi, Zigbee, Bluetooth).
 - Molntjänster och databaser.
 - Användargränssnitt (mobilappar, webbapplikationer).
