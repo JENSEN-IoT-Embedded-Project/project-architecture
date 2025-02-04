@@ -6,9 +6,58 @@
     * Ultrasonic sensor
 - Kommunikationskanaler (Wi-Fi, Zigbee, Bluetooth).
 - Molntjänster och databaser.
-- Användargränssnitt (mobilappar, webbapplikationer).
-- Exempel:
-- Sensor → Gateway → Molnplattform → Användare.
+
+  
+- Användargränssnitt (mobilappar, webbapplikationer)
+
+```mermaid
+graph TD
+    A[Användargränssnitt] --> B[Tillgänglighet]
+    B --> C[Mobilapp: Tillgång på språng]
+    B --> D[Webbapp: Tillgänglig från webbläsare]
+    A --> E[Användarupplevelse]
+    E --> F[Mobilapp: Utnyttjar enhetsspecifika funktioner]
+    E --> G[Webbapp: Konsekvent upplevelse över enheter]
+    A --> H[Funktionalitet]
+    H --> I[Mobilapp: Realtidsövervakning och kontroll]
+    H --> J[Webbapp: Detaljerad hantering och rapportering]
+    A --> K[Redundans]
+    K --> L[Åtkomst om ett gränssnitt är otillgängligt]
+
+    style A fill:#ffcc00,stroke:#333,stroke-width:4px,color:#000,font-weight:bold
+    style B fill:#ff9900,stroke:#333,stroke-width:2px,color:#000,font-weight:bold
+    style C fill:#ff6600,stroke:#333,stroke-width:2px,color:#000,font-weight:bold
+    style D fill:#ff6600,stroke:#333,stroke-width:2px,color:#000,font-weight:bold
+    style E fill:#ff9900,stroke:#333,stroke-width:2px,color:#000,font-weight:bold
+    style F fill:#ff6600,stroke:#333,stroke-width:2px,color:#000,font-weight:bold
+    style G fill:#ff6600,stroke:#333,stroke-width:2px,color:#000,font-weight:bold
+    style H fill:#ff9900,stroke:#333,stroke-width:2px,color:#000,font-weight:bold
+    style I fill:#ff6600,stroke:#333,stroke-width:2px,color:#000,font-weight:bold
+    style J fill:#ff6600,stroke:#333,stroke-width:2px,color:#000,font-weight:bold
+    style K fill:#ff9900,stroke:#333,stroke-width:2px,color:#000,font-weight:bold
+    style L fill:#ff6600,stroke:#333,stroke-width:2px,color:#000,font-weight:bold
+
+```
+
+- Sensor → Gateway → Molnplattform → Användare
+  
+```mermaid
+graph TD
+    A[Sensor] --> B[Gateway]
+    B --> C[Molnplattform]
+    C --> D[Användare]
+    D --> E[Mobilapp]
+    D --> F[Webbapplikation]
+
+    style A fill:#ffcc00,stroke:#333,stroke-width:2px,color:#000,font-weight:bold
+    style B fill:#ff9900,stroke:#333,stroke-width:2px,color:#000,font-weight:bold
+    style C fill:#ff6600,stroke:#333,stroke-width:2px,color:#000,font-weight:bold
+    style D fill:#ffcc00,stroke:#333,stroke-width:2px,color:#000,font-weight:bold
+    style E fill:#ff9900,stroke:#333,stroke-width:2px,color:#000,font-weight:bold
+    style F fill:#ff6600,stroke:#333,stroke-width:2px,color:#000,font-weight:bold
+```
+
+
 
 2. Nätverksdiagram
 - Syfte: Visualisera kommunikationsflöden och nätverkstopologi.
