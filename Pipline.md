@@ -13,6 +13,10 @@
 - Innehäll:
 - Trädbundna och trädlösa nätverk (LAN, WAN, Wi-Fi, 4G/5G).
 - Protokoll som MQTT, COAP, HTTP, eller WebSocket.
+	
+	- Vi behöver en snabb och effektiv kommunikationslösning  eftersom vi jobbar med ett säkerhetssystem. Vi vill minimera risken för "packetloss" och använder oss av TCP-protokollet. Vi använder MQTT-protokollet ovanpå det eftersom
+	- vi jobbar med microdatorer och kräver en lättvikts- och resurseffektiv lösning. MQTT erbjuder QoS-nivåer som gör det lätt att prioritera data som skickas från Picon. 
+
 - Routrar, gateways och nätverksnoder.
 - Exempel:
 - Enheternas anslutning till nätverket och kommunikationen med molntjänster.
