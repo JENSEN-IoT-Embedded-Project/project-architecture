@@ -4,6 +4,7 @@
 - Enheter (sensorer, aktuatorer, gateways).
   Pico w
   Ultrasonic sensor.
+  lampa.
 - Kommunikationskanaler (Wi-Fi, Zigbee, Bluetooth).
 - Molntjänster och databaser.
 - Användargränssnitt (mobilappar, webbapplikationer).
