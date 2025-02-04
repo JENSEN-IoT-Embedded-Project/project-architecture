@@ -12,6 +12,10 @@
 - Syfte: Visualisera kommunikationsflöden och nätverkstopologi.
 - Innehäll:
 - Trädbundna och trädlösa nätverk (LAN, WAN, Wi-Fi, 4G/5G).
+
+	- Vi skickar huvudsakligen data från Picon via hemnätverket (LAN) då vi vill ha en snabb och stabil lösning. Vi behöver dock ha en backup ifall nätverket skulle ligga nere eller ifall det blir strömavbrott. 
+	- Därför har vi en lösning där systemet växlar till 4G ifall det skulle ske. På så sätt så säkerställer vi att kritisk data skickas även om nätverket skulle ligga nere. 
+
 - Protokoll som MQTT, COAP, HTTP, eller WebSocket.
 	
 	- Vi behöver en snabb och effektiv kommunikationslösning  eftersom vi jobbar med ett säkerhetssystem. Vi vill minimera risken för "packetloss" och använder oss av TCP-protokollet. Vi använder MQTT-protokollet ovanpå det eftersom
