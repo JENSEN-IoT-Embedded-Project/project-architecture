@@ -5,8 +5,12 @@
     * pico w
     * Ultrasonic sensor
 - Kommunikationskanaler (Wi-Fi, Zigbee, Bluetooth).
-- Molntjänster och databaser.
-
+    - wi-Fi
+    - Bluetooth
+    - Mobilnätverk(4G/5G)
+    - LAN
+    - WAN
+    - Molntjänster och databaser. 
   
 - Användargränssnitt (mobilappar, webbapplikationer)
 
