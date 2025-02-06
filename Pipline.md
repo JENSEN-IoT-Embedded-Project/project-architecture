@@ -1,9 +1,41 @@
+# Mål med projektet
+Målet med projektet syftar till att bygga ett övergripande säkerhetssystem för att förhindra brott, olyckor
+och att förenkla interaktione med elektroniska enheter i hemmet..
+**Värderingar:**
+- Smart hem
+- Ökad säkerhet
+- Trygghet
+- Minskad stress om man är borta hemifrån
+- Automatisering
+## kraven för produkten
+
+**Funktionella krav**
+- Röstigenkänning
+- Brandlarm
+- Elförbrukning
+- Elsäkerhet.
+- Voice Assistant
+- Larm
+- Kameraövervakning
+- Styrning av smarta hem produkter.
+
+# steg 1. Motion sensor
+Så fort motion sensorn triggas så skickas notis.
+Counter på lcdn skicka den datan exempelvis varje timme. Hur många gånger den har triggats.
+Lampa som tänds när vi triggar den.
+Säkerhet? kunna aktivera den för att direkt skicka signal om en dörr öppnas.
+
+
+# Pipeline
 1. Översiktsdiagram (High-Level Architecture Diagram)
 - Syfte: Ge en övergripande bild av hela loT-systemet.
 - Innehäll:
 - Enheter (sensorer, aktuatorer, gateways).
-    * pico w
-    * Ultrasonic sensor
+    * pico w( microchip som driver sensort och hämtar in datan)
+    * Ultrasonic sensor(mäter om avståndet förändras ger signal)
+    * rasberry pico 5(server & databas för att hantera och lagra datan)
+    * routern( i detta fall gatewayen för att skicka till datan till servern och databasen)
+    * lcd skärm på picon som visar information när den triggas.
 - Kommunikationskanaler (Wi-Fi, Zigbee, Bluetooth).
     - wi-Fi
     - Bluetooth
