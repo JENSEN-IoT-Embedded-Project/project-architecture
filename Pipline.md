@@ -24,8 +24,15 @@ Så fort motion sensorn triggas så skickas notis.
 Counter på lcdn skicka den datan exempelvis varje timme. Hur många gånger den har triggats.
 Lampa som tänds när vi triggar den.
 Säkerhet? kunna aktivera den för att direkt skicka signal om en dörr öppnas.
-
-
+```mermaid
+graph LR
+    A[rörelsesensor] -->|TCP/Socket| B[Databasserver]
+    B -->|SQL| C[MySQL Databas]
+    D[Webbklient] -->|HTTP| E[Webbserver]
+    E -->|SQL| C
+    C -->|Data| E
+    E -->|JSON| D
+```
 # Pipeline
 1. Översiktsdiagram (High-Level Architecture Diagram)
 - Syfte: Ge en övergripande bild av hela loT-systemet.
