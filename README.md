@@ -11,6 +11,8 @@
 
 ## Databas.
 - lagra datan kopplat till varje användare
+###SQLITE
+Lätt att använda och komma igång med.
 ### time series database 
 bra när du ska ha timestamped data
 key value bra att spara data för specifika enheter
