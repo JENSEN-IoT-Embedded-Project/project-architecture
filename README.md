@@ -11,7 +11,7 @@
 
 ## Databas.
 - lagra datan kopplat till varje användare
-###SQLITE
+### SQLITE
 Lätt att använda och komma igång med.
 ### time series database 
 bra när du ska ha timestamped data
