@@ -9,10 +9,22 @@
 - mqtt-brokern prenumererar på data från varje enhetsid.
 - när en förfrågan har besvarats så dirigeras meddelande direkt med information till client/app/webbsever/sms. dirigerar datan så den lagras i en relationsdatabas.
 
-## Databas som lagrar datan time series databas?
+## Databas.
 - lagra datan kopplat till varje användare
-- 
+### time series database 
+bra när du ska ha timestamped data
+key value bra att spara data för specifika enheter
+### Document oriented.
+lagrar data i json liknande format 
+kan lägga till fler servrar för att utöka prestandan.
+flexibel hantering
 
+### Key-Value Store 
+enkelt att komma åt datan och hantera den?
+
+## vad ska vi använda datan till?
+- se timestamps på när ett potentiellt inbrott har ägt rum för att underlätta polisens arbete med att följa potentiell inbrottstjyv.
+- Notifiera användaren om att något har hänt.
 
 ```mermaid
 flowchart TD
