@@ -13,6 +13,7 @@
 ## Databas.
 ## data lake
 ## data lakehouse?
+behöver vi komma åt våran grund data ?
 - lagra datan kopplat till varje användare
 ### SQLITE
 Lätt att använda och komma igång med.
