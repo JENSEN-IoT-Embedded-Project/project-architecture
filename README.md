@@ -11,6 +11,8 @@
 - när en förfrågan har besvarats så dirigeras meddelande direkt med information till client/app/webbsever/sms. dirigerar datan så den lagras i en relationsdatabas.
 
 ## Databas.
+## data lake
+## data lakehouse?
 - lagra datan kopplat till varje användare
 ### SQLITE
 Lätt att använda och komma igång med.
