@@ -33,34 +33,24 @@ enkelt att komma åt datan och hantera den?
 - Notifiera användaren om att något har hänt.
 
 ```mermaid
-graph TD;
-    %% Devices & Sensors
-    A[Ultrasonic Sensor (Pico W)] -->|Wi-Fi/4G| B[MQTT Broker (EmKuTeTe)]
-    
-    %% Communication & Protocols
-    B -->|MQTT/TCP| C[InfluxDB (TSDB)]
-    B -->|HTTP/TCP| D[REST API Server]
+graph TD
+    A[Ultrasonic Sensor] -->|WiFi| B[MQTT Broker]
+    B -->|MQTT| C[InfluxDB]
+    B -->|HTTP| D[REST API]
+    C -->|Data| D
+    D -->|API| E[GUI Client]
+    B -->|SMS| F[Twilio]
+    F -->|Alert| G[User]
 
-    %% Data Handling
-    C -->|Aggregated Data| D
-    D -->|REST API| E[GUI: Mobilapp/Webbsida]
+    classDef db fill:#ffcc00,stroke:#333
+    classDef server fill:#ff6666,stroke:#333
+    classDef gui fill:#66ccff,stroke:#333
+    classDef twilio fill:#cc99ff,stroke:#333
+    classDef mqtt fill:#99cc99,stroke:#333
 
-    %% Notifications
-    B -->|Trigger SMS| F[Twilio API]
-    F -->|Send SMS Alert| G[User]
-
-    %% Class Definitions
-    classDef db fill:#ffcc00,stroke:#333,stroke-width:2px;
-    classDef server fill:#ff6666,stroke:#333,stroke-width:2px;
-    classDef gui fill:#66ccff,stroke:#333,stroke-width:2px;
-    classDef twilio fill:#cc99ff,stroke:#333,stroke-width:2px;
-    classDef mqtt fill:#99cc99,stroke:#333,stroke-width:2px;
-
-    %% Applying Class Definitions
-    C:::db
-    D:::server
-    E:::gui
-    F:::twilio
-    B:::mqtt
-
+    class C db
+    class D server
+    class E gui
+    class F twilio
+    class B mqtt
 ```
