@@ -33,7 +33,7 @@ enkelt att komma åt datan och hantera den?
 - Notifiera användaren om att något har hänt.
 
 ```mermaid
-    graph TD;
+graph TD;
     %% Devices & Sensors
     A[Ultrasonic Sensor (Pico W)] -->|Wi-Fi/4G| B[MQTT Broker (EmKuTeTe)]
     
@@ -49,16 +49,18 @@ enkelt att komma åt datan och hantera den?
     B -->|Trigger SMS| F[Twilio API]
     F -->|Send SMS Alert| G[User]
 
-    %% Flow Details
-    C:::db
-    D:::server
-    E:::gui
-    F:::twilio
-    B:::mqtt
-    
+    %% Class Definitions
     classDef db fill:#ffcc00,stroke:#333,stroke-width:2px;
     classDef server fill:#ff6666,stroke:#333,stroke-width:2px;
     classDef gui fill:#66ccff,stroke:#333,stroke-width:2px;
     classDef twilio fill:#cc99ff,stroke:#333,stroke-width:2px;
     classDef mqtt fill:#99cc99,stroke:#333,stroke-width:2px;
+
+    %% Applying Class Definitions
+    C:::db
+    D:::server
+    E:::gui
+    F:::twilio
+    B:::mqtt
+
 ```
