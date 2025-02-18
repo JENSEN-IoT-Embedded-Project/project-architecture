@@ -33,7 +33,7 @@ enkelt att komma åt datan och hantera den?
 - Notifiera användaren om att något har hänt.
 
 ```mermaid
-graph TD;
+    graph TD;
     %% Devices & Sensors
     A[Ultrasonic Sensor (Pico W)] -->|Wi-Fi/4G| B[MQTT Broker (EmKuTeTe)]
     
@@ -62,6 +62,3 @@ graph TD;
     classDef twilio fill:#cc99ff,stroke:#333,stroke-width:2px;
     classDef mqtt fill:#99cc99,stroke:#333,stroke-width:2px;
 ```
-
-
-
