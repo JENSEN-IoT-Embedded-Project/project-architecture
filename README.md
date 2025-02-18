@@ -42,11 +42,11 @@ graph TD
     B -->|SMS| F[Twilio]
     F -->|Alert| G[User]
 
-    classDef db fill:#ffcc00,stroke:#333
-    classDef server fill:#ff6666,stroke:#333
-    classDef gui fill:#66ccff,stroke:#333
-    classDef twilio fill:#cc99ff,stroke:#333
-    classDef mqtt fill:#99cc99,stroke:#333
+    classDef db fill:#ffcc0099,stroke:#333
+    classDef server fill:#ff666699,stroke:#333
+    classDef gui fill:#66ccff55,stroke:#333
+    classDef twilio fill:#cc99ff99,stroke:#333
+    classDef mqtt fill:#99cc9988,stroke:#333
 
     class C db
     class D server
