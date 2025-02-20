@@ -1,5 +1,4 @@
 ```mermaid
-
 graph TD
     subgraph Edge["Edge Layer (IoT with Soft RTS)"]
         subgraph Devices["Physical Devices"]
@@ -10,10 +9,6 @@ graph TD
         subgraph Processing["Edge Processing"]
             C["Local Processing:<br/>- Data Serialization<br/>- Device ID Addition<br/>- Initial Aggregation"]
         end
-    end
-
-    subgraph Fog["Fog Layer"]
-        D["Fog Node:<br/>- Intermediate Processing<br/>- Data Validation<br/>- Edge Aggregation"]
     end
 
     subgraph Cloud["Cloud Infrastructure"]
@@ -30,8 +25,7 @@ graph TD
 
     A -->|"Sensor Data"| B
     B -->|"Wi-Fi / 4G<br/>ARP, DNS, TCP, MQTT"| C
-    C -->|"Processed Data<br/>+ Device ID"| D
-    D -->|"HTTP/HTTPS<br/>Secured Data"| E
+    C -->|"Processed Data<br/>+ Device ID"| E
     E -->|"Line Protocol<br/>Time Series Data"| F
     E -->|"RESTful API<br/>JSON Format"| G
     F -->|"Aggregated Data"| G
@@ -39,15 +33,13 @@ graph TD
     G -->|"Notification Trigger"| I
     I -->|"SMS Alert"| J
 
-    classDef edge fill:#f9f3,stroke:#333,stroke-width:2px
-    classDef fog fill:#bbf4,stroke:#3334,stroke-width:2px
-    classDef cloud fill:#9f98,stroke:#3336,stroke-width:2px
+    classDef edge fill:#f9f33333,stroke:#333,stroke-width:2px
+    classDef cloud fill:#9f988888,stroke:#3336,stroke-width:2px
     classDef api fill:#f994,stroke:#3337,stroke-width:2px
     classDef ui fill:#fb34,stroke:#3338,stroke-width:2px
     classDef sms fill:#6cf5,stroke:#3339,stroke-width:2px
 
     class A,B,C edge
-    class D fog
     class E,F cloud
     class G api
     class H ui
