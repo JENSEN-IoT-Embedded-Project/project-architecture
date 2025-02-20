@@ -26,9 +26,9 @@ To transmit the data from the MQTT-BROKER to our Database and our GUI Applicatio
 ### InfluxDB (TSDB):
 Will aggregate the data one step further and also send out initial data to the Web/Mobile application. Using built in functions we can request values like “sum” over a specified time period. 
 ## Programming Language & Tools
-###Python
+### Python
 To build our GUI and MQTT-BROKER
-###C/C++
+### C/C++
 For our real time requirements - Sensor triggered -> Notification sent.
 ### Query language 
 Built-in database InfluxQL and Flux.
