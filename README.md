@@ -48,7 +48,7 @@ Pico W &  Databasen InfluxDB
 ## API
 Kommunicerar mellan apparna och databaserna
 ### twilio
-	Cloud API solution to send out sms notifications triggered by the ultrasonic sensor
+Cloud API solution to send out sms notifications triggered by the ultrasonic sensor
 ### MQTT-BROKER
 We will have a MQTT-BROKER to only gather the data when the device has collected something by its criteria, and we want to send out a request and wait for the response regardless of how long the response time will be.
 	
