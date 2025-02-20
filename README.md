@@ -10,9 +10,9 @@ MQTT BROKER
 InfluxDB 
 Web Application
 ## Communication
-###Wi-Fi
+### Wi-Fi
 Main communication. Cheaper and more stable in the long run. We will expand our project in the future with cameras that use more bandwidth.
-###Mobile network (4G)
+### Mobile network (4G)
 Backup communication if Wi-Fi is down. Notification will be sent if the backup communication system is online. 
 
 ## Protocols
