@@ -17,9 +17,9 @@ Backup communication if Wi-Fi is down. Notification will be sent if the backup c
 
 ## Protocols
 
-## MQTT
+### MQTT
 We want to wait for a response regardless of response time and we want to use the certainty of data transmission by MQTT using TCP as a lower layer protocol.
-## HTTP
+### HTTP
 To transmit the data from the MQTT-BROKER to our Database and our GUI Application we will use HTTP as higher level protocol with TCP as lower level protocol
 
 ## Database
