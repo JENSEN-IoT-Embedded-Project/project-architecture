@@ -1,9 +1,8 @@
 # IoT & soft RTS, Edge & Cloud security solution stack.
 ## Edge devices.
-### hardware 
-#####  Raspberry Pi Pico WH (RTS)
+###  Raspberry Pi Pico WH (RTS)
 Edge device which will collect data from the ultrasonic sensor, aggregate the pulses sent and received to measure distance to an object. If that distance is changing rapidly the alarm will go off and the data will be serialised and sent to the MQTT-Broker which will handle the notification to the user and send the data aggregated to the cloud database.
-#####  Ultrasonic sensor HC-SR04 
+###  Ultrasonic sensor HC-SR04 
 Device to send out signals that measures the distance to an object. If the distance to that object is changing rapidly, an alarm will go out and data will be sent. 
 ## Cloud
 MQTT BROKER
