@@ -34,7 +34,7 @@ Built-in database InfluxQL and Flux.
 ###
 
 ## IoT eller RTS?
-EDGE device will act as a RTS the MQTT-BROKER will be the 
+EDGE device will act as a RTS the MQTT-BROKER will be the divider which seprates to one RTS Channel and one IoT channel 
 
 ## Serialisering / Dataomvandling
 ### Pico W
