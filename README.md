@@ -99,7 +99,7 @@ graph TD
     end
 
     A -->|"Sensor Data"| B
-    B -->|"Wi-Fi / 4G<br/>ARP, DNS, TCP, MQTT"| C
+    C -->|"Wi-Fi / 4G<br/>ARP, DNS, TCP, MQTT"| C
     C -->|"Processed Data<br/>+ Device ID"| E
     E -->|"Line Protocol<br/>Time Series Data"| F
     E -->|"RESTful API<br/>JSON Format"| G
