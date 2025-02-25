@@ -72,40 +72,37 @@ Our mobile app will function as a hub for managing settings and viewing the hist
 
 
 
-
 ```mermaid
 graph TD
     subgraph Edge["Edge Layer (IoT with Soft RTS)"]
-        subgraph Devices["Physical Devices"]
+        subgraph "Motion sensor"
             A[Ultrasonic Sensor from Kit]
-            B["Pico W<br/>(Python, C, C++)"]
         end
         
-        subgraph Processing["Edge Processing"]
+        subgraph Processing["Edge Processing Pico W"]
             C["Local Processing:<br/>- Data Serialization<br/>- Device ID Addition<br/>- Initial Aggregation"]
         end
     end
 
     subgraph Cloud["Cloud Infrastructure"]
-        E["Cloud Server:<br/>- Docker on Fly.io<br/>- Advanced Processing<br/>- Soft RTS Management"]
+        E["MQTT Broker:<br/>- Docker on Fly.io<br/>- Advanced Processing<br/>- Soft RTS Management"]
         F["InfluxDB (TSDB):<br/>- Line Protocol<br/>- Cloud Aggregation<br/>- Time Series Data"]
         G["RESTful API:<br/>- Data Access Layer<br/>- Service Integration"]
+        I["Twilio API:<br/>- SMS Gateway<br/>- Alert Management"]
     end
 
     subgraph Interface["User Interface Layer"]
         H["GUI:<br/>- Mobile App<br/>- Web Interface<br/>- Real-time Updates"]
-        I["Twilio Service:<br/>- SMS Gateway<br/>- Alert Management"]
         J["End User"]
     end
 
-    A -->|"Sensor Data"| B
-    B -->|"Wi-Fi / 4G<br/>ARP, DNS, TCP, MQTT"| C
-    C -->|"Processed Data<br/>+ Device ID"| E
+    A -->|"Sensor Data"| C
+    C -->|"Processed Data<br/>+ Device ID<br/>Wi-Fi / 4G<br/>ARP, DNS, TCP, MQTT"| E
     E -->|"Line Protocol<br/>Time Series Data"| F
-    E -->|"RESTful API<br/>JSON Format"| G
     F -->|"Aggregated Data"| G
     G -->|"Cloud Communication<br/>Secure WebSocket"| H
-    G -->|"Notification Trigger"| I
+
+    E -->|"Notification Trigger"| I
     I -->|"SMS Alert"| J
 
     classDef edge fill:#f9f33333,stroke:#333,stroke-width:2px
@@ -113,9 +110,8 @@ graph TD
     classDef api fill:#f994,stroke:#3337,stroke-width:2px
     classDef ui fill:#fb34,stroke:#3338,stroke-width:2px
     classDef sms fill:#6cf5,stroke:#3339,stroke-width:2px
-
-    class A,B,C edge
+    class A,C edge
     class E,F cloud
-    class G api
+    class G,I api
     class H ui
-    class I,J sms
+    class J sms
