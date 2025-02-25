@@ -1,3 +1,7 @@
+# About the system
+Smart Home Security & Automation System enhances safety, convenience, and energy efficiency by integrating advanced security measures, smart monitoring, and automation controls. The system ensures real-time insights into home security and appliance health, providing homeowners with peace of mind and total control over their living environment.
+
+
 # IoT & soft RTS, Edge & Cloud security solution stack.
 ## Edge devices.
 ###  Raspberry Pi Pico WH (RTS)
