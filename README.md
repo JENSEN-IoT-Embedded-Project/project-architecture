@@ -1,7 +1,39 @@
 # About the system
 Smart Home Security & Automation System enhances safety, convenience, and energy efficiency by integrating advanced security measures, smart monitoring, and automation controls. The system ensures real-time insights into home security and appliance health, providing homeowners with peace of mind and total control over their living environment.
 
-
+```mermaid
+flowchart TD
+    A[Smart Home Security & Automation System] --> B[Advanced Security]
+    A --> C[Smart Monitoring]
+    A --> D[Automation Controls]
+    
+    B --> B1[Real-time Alerts]
+    B --> B2[Access Control]
+    B --> B3[Surveillance]
+    
+    C --> C1[Appliance Health]
+    C --> C2[Energy Usage]
+    C --> C3[Environmental Monitoring]
+    
+    D --> D1[Temperature Control]
+    D --> D2[Lighting Management]
+    D --> D3[Appliance Automation]
+    
+    B1 --> E[Homeowner Benefits]
+    B2 --> E
+    B3 --> E
+    C1 --> E
+    C2 --> E
+    C3 --> E
+    D1 --> E
+    D2 --> E
+    D3 --> E
+    
+    E --> E1[Peace of Mind]
+    E --> E2[Convenience]
+    E --> E3[Energy Efficiency]
+    E --> E4[Total Control]
+```
 # IoT & soft RTS, Edge & Cloud security solution stack.
 ## Edge devices.
 ###  Raspberry Pi Pico WH (RTS)
