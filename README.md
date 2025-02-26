@@ -12,6 +12,7 @@ Device to send out signals that measures the distance to an object. If the dista
 MQTT BROKER
 InfluxDB 
 Web Application
+twilio api.
 ## Communication
 ### Wi-Fi
 Main communication. Cheaper and more stable in the long run. We will expand our project in the future with cameras that use more bandwidth.
