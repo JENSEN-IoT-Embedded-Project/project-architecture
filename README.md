@@ -155,7 +155,6 @@ graph TD
     classDef ui fill:#fb34,stroke:#3338,stroke-width:2px
     classDef sms fill:#6cf5,stroke:#3339,stroke-width:2px
     class A,C edge
-```
     class D fog
     class E,F cloud
     class G,I api
