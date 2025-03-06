@@ -40,8 +40,9 @@ flowchart TD
 Edge device which will collect data from the ultrasonic sensor, aggregate the pulses sent and received to measure distance to an object. If that distance is changing rapidly the alarm will go off and the data will be serialised and sent to the MQTT-Broker which will handle the notification to the user and send the data aggregated to the cloud database.
 ###  Ultrasonic sensor HC-SR04 
 Device to send out signals that measures the distance to an object. If the distance to that object is changing rapidly, an alarm will go out and data will be sent. 
-## Cloud
+## Fog raspberry zero 2 w
 MQTT BROKER
+## Cloud
 InfluxDB 
 Web Application
 twilio api.
@@ -109,7 +110,7 @@ Our mobile app will function as a hub for managing settings and viewing the hist
 
 
 
-```mermaid
+
 graph TD
     subgraph Edge["Edge Layer (IoT with Soft RTS)"]
         subgraph "Motion sensor"
@@ -121,8 +122,12 @@ graph TD
         end
     end
 
+    subgraph Fog["Fog Layer"]
+        D["Raspberry Pi Zero 2:<br/>- MQTT Broker<br/>- Pre-processing<br/>- Local Storage"]
+    end
+    
     subgraph Cloud["Cloud Infrastructure"]
-        E["MQTT Broker:<br/>- Docker on Fly.io<br/>- Advanced Processing<br/>- Soft RTS Management"]
+        E["Advanced Processing:<br/>- Soft RTS Management"]
         F["InfluxDB (TSDB):<br/>- Line Protocol<br/>- Cloud Aggregation<br/>- Time Series Data"]
         G["RESTful API:<br/>- Data Access Layer<br/>- Service Integration"]
         I["Twilio API:<br/>- SMS Gateway<br/>- Alert Management"]
@@ -134,7 +139,8 @@ graph TD
     end
 
     A -->|"Sensor Data"| C
-    C -->|"Processed Data<br/>+ Device ID<br/>Wi-Fi / 4G<br/>ARP, DNS, TCP, MQTT"| E
+    C -->|"Processed Data<br/>+ Device ID<br/>Wi-Fi / 4G<br/>ARP, DNS, TCP, MQTT"| D
+    D -->|"MQTT Communication"| E
     E -->|"Line Protocol<br/>Time Series Data"| F
     F -->|"Aggregated Data"| G
     G -->|"Cloud Communication<br/>Secure WebSocket"| H
@@ -143,11 +149,13 @@ graph TD
     I -->|"SMS Alert"| J
 
     classDef edge fill:#f9f33333,stroke:#333,stroke-width:2px
+    classDef fog fill:#aa99ff88,stroke:#333,stroke-width:2px
     classDef cloud fill:#9f988888,stroke:#3336,stroke-width:2px
     classDef api fill:#f994,stroke:#3337,stroke-width:2px
     classDef ui fill:#fb34,stroke:#3338,stroke-width:2px
     classDef sms fill:#6cf5,stroke:#3339,stroke-width:2px
     class A,C edge
+    class D fog
     class E,F cloud
     class G,I api
     class H ui
