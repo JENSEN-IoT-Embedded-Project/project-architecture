@@ -109,6 +109,58 @@ An SMS will be sent when the motion sensor is triggered. We will be using the cl
 Our mobile app will function as a hub for managing settings and viewing the history of previous alerts. Users will be able to configure notification preferences, review past motion events etc.
 
 
+mermaid
+graph TD
+    subgraph Edge["Edge Layer (IoT with Soft RTS)"]
+        subgraph "Motion sensor"
+            A[Ultrasonic Sensor from Kit]
+        end
+        
+        subgraph Processing["Edge Processing Pico W"]
+            C["Local Processing:<br/>- Data Serialization<br/>- Device ID Addition<br/>- Initial Aggregation"]
+        end
+    end
+
+    subgraph Cloud["Cloud Infrastructure"]
+        E["MQTT Broker:<br/>- Docker on Fly.io<br/>- Advanced Processing<br/>- Soft RTS Management"]
+        F["InfluxDB (TSDB):<br/>- Line Protocol<br/>- Cloud Aggregation<br/>- Time Series Data"]
+        G["RESTful API:<br/>- Data Access Layer<br/>- Service Integration"]
+        I["Twilio API:<br/>- SMS Gateway<br/>- Alert Management"]
+    end
+
+    subgraph Interface["User Interface Layer"]
+        H["GUI:<br/>- Mobile App<br/>- Web Interface<br/>- Real-time Updates"]
+        J["End User"]
+    end
+
+    A -->|"Sensor Data"| C
+    C -->|"Processed Data<br/>+ Device ID<br/>Wi-Fi / 4G<br/>ARP, DNS, TCP, MQTT"| E
+    E -->|"Line Protocol<br/>Time Series Data"| F
+    F -->|"Aggregated Data"| G
+    G -->|"Cloud Communication<br/>Secure WebSocket"| H
+
+    E -->|"Notification Trigger"| I
+    I -->|"SMS Alert"| J
+
+    classDef edge fill:#f9f33333,stroke:#333,stroke-width:2px
+    classDef cloud fill:#9f988888,stroke:#3336,stroke-width:2px
+    classDef api fill:#f994,stroke:#3337,stroke-width:2px
+    classDef ui fill:#fb34,stroke:#3338,stroke-width:2px
+    classDef sms fill:#6cf5,stroke:#3339,stroke-width:2px
+    class A,C edge
+    class E,F cloud
+    class G,I api
+    class H ui
+    class J sms
+
+kan du ändra så mqttbrokern hamnar i en egen box med raspberry zero 2 som fog device
+
+ChatGPT sade:
+Här är den uppdaterade versionen av ditt flödesdiagram med en "Fog Layer" där en Raspberry Pi Zero 2 fungerar som en fog-enhet och hanterar MQTT-brokern.
+
+Iot Edge Fog Cloud
+Jag har lagt till en "Fog Layer" där en Raspberry Pi Zero 2 hanterar MQTT-brokern och fungerar som en mellanliggande bearbetningsnod mellan Edge-enheten (Pico W) och molnet. Säg till om du vill justera något ytterligare! 🚀
+
 ```mermaid
 graph TD
     subgraph Edge["Edge Layer (IoT with Soft RTS)"]
@@ -140,9 +192,6 @@ graph TD
     A -->|"Sensor Data"| C
     C -->|"Processed Data<br/>+ Device ID<br/>Wi-Fi / 4G<br/>ARP, DNS, TCP, MQTT"| D
     D -->|"MQTT Communication"| E
-    D -->|"MQTT Communication"| F
-    D -->|"MQTT Communication"| I
-    
     E -->|"Line Protocol<br/>Time Series Data"| F
     F -->|"Aggregated Data"| G
     G -->|"Cloud Communication<br/>Secure WebSocket"| H
@@ -162,4 +211,3 @@ graph TD
     class G,I api
     class H ui
     class J sms
-
