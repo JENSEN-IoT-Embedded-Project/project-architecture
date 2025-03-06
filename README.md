@@ -110,7 +110,6 @@ Our mobile app will function as a hub for managing settings and viewing the hist
 
 
 
-```mermaid
 graph TD
     subgraph Edge["Edge Layer (IoT with Soft RTS)"]
         subgraph "Motion sensor"
@@ -141,6 +140,9 @@ graph TD
     A -->|"Sensor Data"| C
     C -->|"Processed Data<br/>+ Device ID<br/>Wi-Fi / 4G<br/>ARP, DNS, TCP, MQTT"| D
     D -->|"MQTT Communication"| E
+    D -->|"MQTT Communication"| F
+    D -->|"MQTT Communication"| I
+    
     E -->|"Line Protocol<br/>Time Series Data"| F
     F -->|"Aggregated Data"| G
     G -->|"Cloud Communication<br/>Secure WebSocket"| H
@@ -160,3 +162,4 @@ graph TD
     class G,I api
     class H ui
     class J sms
+
