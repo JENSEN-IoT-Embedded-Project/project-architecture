@@ -109,7 +109,7 @@ An SMS will be sent when the motion sensor is triggered. We will be using the cl
 Our mobile app will function as a hub for managing settings and viewing the history of previous alerts. Users will be able to configure notification preferences, review past motion events etc.
 
 
-
+```mermaid
 graph TD
     subgraph Edge["Edge Layer (IoT with Soft RTS)"]
         subgraph "Motion sensor"
